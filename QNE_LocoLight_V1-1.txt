@@ -1,0 +1,85 @@
+@name QNE LocoLight V1.1
+@inputs Enable Reverser MU_F MU_R
+@outputs Headlight_F Headlight_R Marker_F Marker_R
+@persist 
+@trigger Reverser
+
+#Version 1.1 update notes
+#-Changed if() conditions to ">".
+#-Added comments.
+
+#Future updates:
+#-Inputs will be modified at later date to improve ease of use.
+#-Ditchlight support
+
+if(Enable == 1)
+{
+    
+    if(MU_F > 0 && MU_R == 0) #Locomotive has a forward facing connection.
+    {
+        Headlight_F = 0
+        Marker_F = 0
+        Marker_R = 1
+        switch(Reverser)
+        {
+            case -1,
+                Headlight_R = 1
+                break
+            case 1,
+                Headlight_R = 0
+                break
+            default,
+                Headlight_R = 0
+                
+                break
+        }
+    }
+    
+    if(MU_F == 0 && MU_R > 0) #Locomotive has a rear facing connection.
+    {
+        Headlight_R = 0
+        Marker_F = 1
+        Marker_R = 0
+        switch(Reverser)
+        {
+            case -1,
+                Headlight_F = 0
+                break
+            case 1,
+                Headlight_F = 1
+                break
+            default,
+                Headlight_F = 0
+                break
+        }
+    }
+    
+    if(MU_F > 0 && MU_R > 0) #Locomotive has both forward and rear facing connections.
+    {
+        Headlight_F = 0
+        Marker_F = 0
+        Headlight_R = 0
+        Marker_R = 0
+    }
+    
+    if(MU_F == 0 && MU_R == 0) #Locomotive is not connected to any other units.
+    {
+        Marker_F = 1
+        Marker_R = 1
+        switch(Reverser)
+        {
+            case -1,
+                Headlight_F = 0
+                Headlight_R = 1
+                break
+            case 1,
+                Headlight_F = 1
+                Headlight_R = 0
+                break
+            default,
+                Headlight_F = 0
+                Headlight_R = 0
+                break
+        }
+    }
+}
