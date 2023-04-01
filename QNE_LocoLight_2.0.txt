@@ -1,0 +1,59 @@
+@name QNE LocoLight V2.0
+@inputs RLCPT:entity Enable Reverser 
+@outputs Headlight_F Headlight_R Marker_F Marker_R
+@persist RLCPTW:wirelink MU_F MU_R
+@trigger Reverser
+
+#MOTD - 2023/04/01: Happy april fools
+#V2.0 update notes
+#-Removed Switch/Case statements
+#-Inputs modified, MU_F & MU_R are now provided by a wirelink to the RLC chip
+
+#Future V2.x features:
+#-Connecting "Reverser" using RLCPTW
+#-Ditchlight & emergency light support
+
+#Future updates:
+#-Ditchlight & emergency light flashing
+
+
+if(Enable == 1) #I would recommend wiring this to either your locomotive's isolation switch or the "ON1" output on your RLC chip
+{
+    MU_F = RLCPTW["MU_F",number]
+    MU_R = RLCPTW["MU_R",number]
+
+    if(MU_F > 0 && MU_R == 0) #Locomotive has a forward facing connection.
+    {
+        Marker_R = 1
+        if(Reverser == -1){Headlight_R = 1}
+        else{Headlight_R = 0}
+    }
+    
+    elseif(MU_F == 0 && MU_R > 0) #Locomotive has a rear facing connection.
+    {            
+        Marker_F = 1
+        if(Reverser == 1){Headlight_F = 1}
+        else{Headlight_F = 0}
+    }
+    
+    elseif(MU_F > 0 && MU_R > 0) #Locomotive has both forward and rear facing connections.
+    {
+        Headlight_F = 0
+        Marker_F = 0
+        Headlight_R = 0
+        Marker_R = 0
+    }
+    
+    else #Locomotive is not connected to any other units.
+    {
+        Marker_F = 1
+        Marker_R = 1
+        if(Reverser == -1){Headlight_R = 1}
+        elseif(Reverser == 1){Headlight_F = 1}
+        else
+        {
+            Headlight_F = 0
+            Headlight_R = 0
+        }
+    }
+}
