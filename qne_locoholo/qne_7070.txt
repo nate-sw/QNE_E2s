@@ -1,0 +1,69 @@
+@name QNE 7070
+@inputs [Entity]:entity
+@persist A
+StripeColor1 = vec(0,0,0) #Black
+StripeColor2 = vec(255,255,255) #White
+StripeColor3 = vec(66,135,245) #Blue
+CarModel = "models/wam98_trains/locomotives/emd_sd70ace_phase2a-2e3.mdl"
+Entity:setAlpha(0)
+
+    #Top
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor1)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,110.5), vec(0,0,1),0)
+    
+    #Stripe 1
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor2)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,110.5), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,108.5), vec(0,0,1),0)
+    
+    #Middle
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor3)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,108.5), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,28.5), vec(0,0,1),0)
+
+    #Stripe 2
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor2)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,28.5), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,26.5), vec(0,0,1),0)
+
+    #Bottom
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor1)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,26.5), vec(0,0,-1),0)
