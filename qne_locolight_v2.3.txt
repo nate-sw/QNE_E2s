@@ -1,12 +1,12 @@
-@name QNE LocoLight V2.2
+@name QNE LocoLight V2.3
 @inputs RLCPT:entity Enable Reverser Headlight_T 
 @outputs Headlight_F Headlight_R Ditchlight_F Ditchlight_R Marker_F Marker_R
 @persist RLCPTW:wirelink MU_F MU_R
 @trigger Reverser Headlight_T
 
-#MOTD - 2023/04/02: yep
-#V2.2 update notes
-#-Modified Output logic
+#MOTD - 2023/04/06: Nothing to report
+#V2.3 update notes
+#-Fixed rear marker staying on with rear connection
 
 #Future V2.x features:
 #-Connecting "Reverser" using RLCPTW
@@ -43,6 +43,7 @@ if(Enable == 1) #I would recommend wiring this to either your locomotive's isola
     
     elseif(MU_F == 0 && MU_R > 0) #Locomotive has a rear facing connection.
     {            
+        Marker_R = 0
         if(Reverser == 1) #Reverser is set to FWD
         {
             Ditchlight_F = 1
