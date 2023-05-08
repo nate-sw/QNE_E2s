@@ -1,0 +1,84 @@
+@name QNE LocoLight V3.3
+@inputs Enable Reverser Headlight_T MU_F MU_R
+@outputs Headlight_F Headlight_R Ditchlight_F Ditchlight_R Marker_F Marker_R
+@persist MU_F MU_R DF_E DR_E MF_E MR_E HF_E HR_E
+@trigger Reverser Headlight_T Enable
+
+#MOTD - 2023/04/06: Huge storm in southern Quebec yesterday
+#V3.3 update notes
+#-Fixed issue: headlight would be enabled when in MU config
+#-
+
+#Future V3.x updates:
+#-Fixing Wirelink
+
+
+#Future updates:
+#-Emergency light support
+#-Ditchlight & emergency light flashing
+
+ 
+if(Enable == 1) #I would recommend wiring this to either your locomotive's isolation switch or the "ON1" output on your RLC chip
+{
+    
+    if(MU_F != 0) #Locomotive has a forward facing connection.
+    {
+        HF_E = 0
+        DF_E = 0
+        MF_E = 0
+    }
+    else
+    {
+        HF_E = 1
+        DF_E = 1
+        MF_E = 1
+    }
+    
+    if(MU_R != 0) #Locomotive has a rear facing connection.
+    {            
+        HR_E = 0
+        DR_E = 0
+        MR_E = 0
+    }
+    else
+    {
+        HR_E = 1
+        DR_E = 1
+        MR_E = 1
+    }
+    
+    if(Reverser == 1) #Reverser is set to FWD
+    {
+        if(Headlight_T == 1){Headlight_F = bAnd(HF_E,1)}
+        else{Headlight_F = 0}
+        
+        Ditchlight_F = bAnd(DF_E,1)
+        Ditchlight_R = bAnd(DR_E,0)
+        Marker_F = bAnd(MF_E,0)
+        Marker_R = bAnd(MR_E,1)
+    }
+    
+    elseif(Reverser == -1) #Reverser is set to REV
+    {
+        if(Headlight_T == 1){Headlight_R = bAnd(HR_E,1)}
+        else{Headlight_R = 0}
+        
+        Ditchlight_F = bAnd(DF_E,0)
+        Ditchlight_R = bAnd(DR_E,1)
+        Marker_F = bAnd(MF_E,1)
+        Marker_R = bAnd(MR_E,0)
+    }
+    
+    else #Reverser is set to N
+    {
+        Headlight_F = 0
+        Headlight_R = 0
+        
+        Ditchlight_F = bAnd(DF_E,0)
+        Ditchlight_R = bAnd(DR_E,0)
+        Marker_F = bAnd(MF_E,1)
+        Marker_R = bAnd(MR_E,1)
+    }
+    
+    
+}

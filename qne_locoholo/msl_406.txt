@@ -1,0 +1,758 @@
+@name MSL 406
+@inputs [Entity]:entity Headlight_F Headlight_R Ditchlight_F Ditchlight_R Marker_F Marker_R
+@persist A LightN 
+StripeColor1 = vec(0,0,0) #Black
+StripeColor2 = vec(252,119,3) #Orange
+StripeColor3 = vec(7,74,23) #Green
+LightColor1 = vec(255,255,255) #White
+LightColor2 = vec(200,0,0) #Red
+CarModel = "models/rika/loco/mlw_rs3_ph2a1-ph2a3.mdl"
+LHModel = "models/anytrains/rollingstock/locomotives/us/emd_gp9.mdl"
+Entity:setAlpha(0)
+
+if(first()|duped()){
+    #Functional Cosmetics
+        
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/headlight_led.mdl")
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(0,191,117)))
+        holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(5,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(6,"models/proppertextures/acrylic")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/headlight_led.mdl")
+        holoColor(A, LightColor1)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(0,-285,105)))
+        holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(5,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(6,"models/proppertextures/acrylic")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led2.mdl")
+        holoColor(A, LightColor1)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(24,311,24)))
+        holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(5,"models/proppertextures/acrylic")
+        holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led2.mdl")
+        holoColor(A, LightColor1)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(-24,311,24)))
+        holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(5,"models/proppertextures/acrylic")
+        holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led2.mdl")
+        holoColor(A, LightColor1)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(24,-311,24)))
+        holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(5,"models/proppertextures/acrylic")
+        holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led2.mdl")
+        holoColor(A, LightColor1)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(-24,-311,24)))
+        holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(5,"models/proppertextures/acrylic")
+        holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+        
+        A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led.mdl")
+        holoColor(A, LightColor2)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(19.5,311.8,44)))
+        holoScale(A, vec(0.8, 0.8, 0.8))
+        holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(5,"models/proppertextures/acrylic")
+        holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led.mdl")
+        holoColor(A, LightColor2)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(-19.5,311.8,44)))
+        holoScale(A, vec(0.8, 0.8, 0.8))
+        holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(5,"models/proppertextures/acrylic")
+        holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led.mdl")
+        holoColor(A, LightColor2)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(19.5,-311.8,44)))
+        holoScale(A, vec(0.8, 0.8, 0.8))
+        holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(5,"models/proppertextures/acrylic")
+        holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led.mdl")
+        holoColor(A, LightColor2)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(-19.5,-311.8,44)))
+        holoScale(A, vec(0.8, 0.8, 0.8))
+        holoEntity(A):setSubMaterial(1,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(5,"models/proppertextures/acrylic")
+        holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+        
+    
+        
+        
+        
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/magtrains/numplate_emd_4d.mdl")
+        holoAng(A, Entity:toWorld(ang(90,63.5,0)))
+        holoPos(A, Entity:toWorld(vec(21,183.5,115)))
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/magtrains/numplate_emd_4d.mdl")
+        holoAng(A, Entity:toWorld(ang(90,116.5,0)))
+        holoPos(A, Entity:toWorld(vec(-21,183.5,115)))
+        
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/magtrains/numplate_emd_4d.mdl")
+        holoAng(A, Entity:toWorld(ang(-90,58,0)))
+        holoPos(A, Entity:toWorld(vec(-20,-276.3,100)))
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/magtrains/numplate_emd_4d.mdl")
+        holoAng(A, Entity:toWorld(ang(-90,122,0)))
+        holoPos(A, Entity:toWorld(vec(20,-276.3,100)))
+        
+        
+        
+        
+        
+#Locomotive Body
+
+    #Short Hood Top - RS3 
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, CarModel)
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,0,0)))
+        holoPos(A, Entity:toWorld(vec(0,0,0)))
+        holoClipEnabled(A,1,1)
+        holoClipEnabled(A,2,1)
+        holoClip(A,1,vec(0,0,90), vec(0,0,1),0)
+        holoClip(A,2,vec(0,103.5,0), vec(0,1,0),0)
+        holoBodygroup(A,1,7)
+        holoBodygroup(A,2,2)
+    
+    #Short Hood Stripe- RS3
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, CarModel)
+        holoColor(A, StripeColor2)
+        holoAng(A, Entity:toWorld(ang(0,0,0)))
+        holoPos(A, Entity:toWorld(vec(0,0,0)))
+        holoClipEnabled(A,1,1)
+        holoClipEnabled(A,2,1)
+        holoClipEnabled(A,3,1)
+        holoClip(A,1,vec(0,0,90), vec(0,0,-1),0)
+        holoClip(A,2,vec(0,0,88), vec(0,0,1),0)
+        holoClip(A,3,vec(0,103.5,0), vec(0,1,0),0)
+        holoBodygroup(A,1,7)
+        holoBodygroup(A,2,2)
+        holoBodygroup(A,8,2)
+        holoEntity(A):setSubMaterial(16,"icegt/loco/ice_trainmetal_black")
+        holoEntity(A):setSubMaterial(17,"icegt/loco/ice_trainmetal_black")
+    
+    #Short Hood Bottom - RS3
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, CarModel)
+        holoColor(A, StripeColor3)
+        holoAng(A, Entity:toWorld(ang(0,0,0)))
+        holoPos(A, Entity:toWorld(vec(0,0,0)))
+        holoClipEnabled(A,1,1)
+        holoClipEnabled(A,2,1)
+        holoClipEnabled(A,3,1)
+        holoClip(A,1,vec(0,0,88), vec(0,0,-1),0)
+        holoClip(A,3,vec(0,103.5,0), vec(0,1,0),0)
+        holoBodygroup(A,1,7)
+        holoBodygroup(A,2,2)
+        holoBodygroup(A,8,2)
+        holoBodygroup(A,12,1)
+        holoEntity(A):setSubMaterial(2,"bobsters_trains/br_yellow")
+        holoEntity(A):setSubMaterial(3,"bobsters_trains/br_carpet_grey")
+        holoEntity(A):setSubMaterial(4,"bobsters_trains/br_yellow")
+        holoEntity(A):setSubMaterial(16,"icegt/loco/ice_trainmetal_black")
+        holoEntity(A):setSubMaterial(17,"icegt/loco/ice_trainmetal_black")
+        holoEntity(A):setSubMaterial(21,"bobsters_trains/br_yellow")
+
+
+    #Long Hood - RS3
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, CarModel)
+        holoColor(A, StripeColor3)
+        holoAng(A, Entity:toWorld(ang(0,0,0)))
+        holoPos(A, Entity:toWorld(vec(0,0,0)))
+        holoClipEnabled(A,1,1)
+        holoClip(A,1,vec(0,103.5,0), vec(0,-1,0),0)
+        holoBodygroup(A,1,7)
+        holoBodygroup(A,2,2)
+        holoBodygroup(A,8,2)
+        holoBodygroup(A,12,1)
+        holoEntity(A):setSubMaterial(2,"bobsters_trains/br_yellow")
+        holoEntity(A):setSubMaterial(3,"bobsters_trains/br_carpet_grey")
+        holoEntity(A):setSubMaterial(4,"bobsters_trains/br_yellow")
+        holoEntity(A):setSubMaterial(5,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(7,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(8,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(9,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(10,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(11,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(16,"icegt/loco/ice_trainmetal_black")
+        holoEntity(A):setSubMaterial(17,"icegt/loco/ice_trainmetal_black")
+        holoEntity(A):setSubMaterial(18,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(19,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(21,"bobsters_trains/br_yellow")
+        holoEntity(A):setSubMaterial(24,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(25,"models/proppertextures/invisible")
+
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, LHModel)
+        holoColor(A, StripeColor1)
+        holoClipEnabled(A,1,1)
+        holoClipEnabled(A,2,1)
+        holoClipEnabled(A,3,1)
+        holoClipEnabled(A,4,1)
+        holoClipEnabled(A,5,1)
+        holoClip(A,1,vec(0,0,98.5), vec(0,0,1),0)
+        holoClip(A,2,vec(103.5,0,0), vec(-1,0,0),0)
+        holoClip(A,5,vec(-300,0,0), vec(1,0,0),0)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(0,2,-8.5)))
+        holoBodygroup(A,4,1)
+        holoBodygroup(A,3,1)
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, LHModel)
+        holoColor(A, StripeColor2)
+        holoClipEnabled(A,1,1)
+        holoClipEnabled(A,2,1)
+        holoClipEnabled(A,3,1)
+        holoClipEnabled(A,4,1)
+        holoClipEnabled(A,5,1)
+        holoClipEnabled(A,6,1)
+        holoClip(A,1,vec(0,0,98.5), vec(0,0,-1),0)
+        holoClip(A,2,vec(0,0,96.5), vec(0,0,1),0)
+        holoClip(A,3,vec(103.5,0,0), vec(-1,0,0),0)
+        holoClip(A,4,vec(0,37.2,0), vec(0,-1,0),0)
+        holoClip(A,5,vec(0,-37.2,0), vec(0,1,0),0)
+        holoClip(A,6,vec(-300,0,0), vec(1,0,0),0)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(0,2,-8.5)))
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, LHModel)
+        holoColor(A, StripeColor3)
+        holoClipEnabled(A,1,1)
+        holoClipEnabled(A,2,1)
+        holoClipEnabled(A,3,1)
+        holoClipEnabled(A,4,1)
+        holoClipEnabled(A,5,1)
+        holoClip(A,1,vec(0,0,96.5), vec(0,0,-1),0)
+        holoClip(A,2,vec(103.5,0,0), vec(-1,0,0),0)
+        holoClip(A,3,vec(0,37.2,0), vec(0,-1,0),0)
+        holoClip(A,4,vec(0,-37.2,0), vec(0,1,0),0)
+        holoClip(A,5,vec(-300,0,0), vec(1,0,0),0)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(0,2,-8.5)))
+        holoEntity(A):setSubMaterial(2,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(3,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(6,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(10,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(15,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(16,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(17,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(24,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(28,"models/proppertextures/invisible")
+        holoEntity(A):setSubMaterial(27,"models/proppertextures/invisible")
+
+
+    #Non-Functional Cosmetics
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/headlight_led.mdl")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(0,191,117)))
+        holoEntity(A):setSubMaterial(5,"models/proppertextures/acrylic")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/headlight_led.mdl")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(0,-285,105)))
+        holoEntity(A):setSubMaterial(5,"models/proppertextures/acrylic")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led2.mdl")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(24,311,24)))
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/acrylic")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led2.mdl")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(-24,311,24)))
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/acrylic")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led2.mdl")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(24,-311,24)))
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/acrylic")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led2.mdl")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(-24,-311,24)))
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/acrylic")
+        
+        A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led.mdl")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(19.5,311.8,44)))
+        holoScale(A, vec(0.8, 0.8, 0.8))
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/acrylic")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led.mdl")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(-19.5,311.8,44)))
+        holoScale(A, vec(0.8, 0.8, 0.8))
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/acrylic")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led.mdl")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(19.5,-311.8,44)))
+        holoScale(A, vec(0.8, 0.8, 0.8))
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/acrylic")
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/fox/ditchlight_led.mdl")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(-19.5,-311.8,44)))
+        holoScale(A, vec(0.8, 0.8, 0.8))
+        holoEntity(A):setSubMaterial(4,"models/proppertextures/acrylic")
+    
+    
+
+
+        
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/ext/parts/ditchlight_mount.mdl")
+        holoMaterial(A,"models/proppertextures/acrylic")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,180,0)))
+        holoPos(A, Entity:toWorld(vec(-24,-310.6,18)))
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/ext/parts/ditchlight_mount.mdl")
+        holoMaterial(A,"models/proppertextures/acrylic")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,180,0)))
+        holoPos(A, Entity:toWorld(vec(24,-310.6,18)))
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/ext/parts/ditchlight_mount.mdl")
+        holoMaterial(A,"models/proppertextures/acrylic")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,0,0)))
+        holoPos(A, Entity:toWorld(vec(-24,310.6,18)))
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/ext/parts/ditchlight_mount.mdl")
+        holoMaterial(A,"models/proppertextures/acrylic")
+        holoColor(A, StripeColor1)
+        holoAng(A, Entity:toWorld(ang(0,0,0)))
+        holoPos(A, Entity:toWorld(vec(24,310.6,18)))
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/gsgtrainprops/trains/propper/snowplows/plow_medium_multipurpose.mdl")
+        holoBodygroup(A,1,1)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(0,313.9,-38.8)))
+
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/lazpack/detail/mu_3hose_left.mdl")
+        holoBodygroup(A,1,1)
+        holoBodygroup(A,2,1)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(-30,314.5,6)))
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/lazpack/detail/mu_3hose_right.mdl")
+        holoBodygroup(A,1,1)
+        holoBodygroup(A,2,1)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(30,314.5,6)))
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/lazpack/detail/brakehose_offset.mdl")
+        holoBodygroup(A,1,1)
+        holoBodygroup(A,2,1)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(-16.5,317,-11.8)))
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/toast/accessories/23in_stamped_brakewheel.mdl")
+        holoColor(A, StripeColor3)
+        holoBodygroup(A,1,1)
+        holoBodygroup(A,2,1)
+        holoAng(A, Entity:toWorld(ang(0,90,0)))
+        holoPos(A, Entity:toWorld(vec(8,285,50)))
+    
+    
+
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/gsgtrainprops/trains/propper/snowplows/plow_medium_multipurpose.mdl")
+        holoBodygroup(A,1,1)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(0,-313.9,-38.8)))
+    
+
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/lazpack/detail/mu_3hose_left.mdl")
+        holoBodygroup(A,1,1)
+        holoBodygroup(A,2,1)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(30,-314.5,6)))
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/lazpack/detail/mu_3hose_right.mdl")
+        holoBodygroup(A,1,1)
+        holoBodygroup(A,2,1)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(-30,-314.5,6)))
+    
+    A++
+        holoCreate(A)
+        holoParent(A, Entity)
+        holoModel(A, "models/lazpack/detail/brakehose_offset.mdl")
+        holoBodygroup(A,1,1)
+        holoBodygroup(A,2,1)
+        holoAng(A, Entity:toWorld(ang(0,-90,0)))
+        holoPos(A, Entity:toWorld(vec(16.5,-317,-11.8)))
+        
+}
+
+
+if(Headlight_F == 1)
+{
+    
+    spriteEnable(1, 1)
+    spriteSpawn(1,"sprites/light_glow01")
+    spriteSetParent(1, Entity)
+    spriteSetScale(1, 1.5)
+        
+    holoColor(1, LightColor1, 255)
+    holoDisableShading(1,1)
+    spriteSetColor(1, LightColor1)
+    spriteSetPos(1, Entity:toWorld(vec(0,193,117)))
+    spriteSetAlpha(1, 255)
+}
+else
+{
+    holoColor(1, LightColor1, 100)
+    holoDisableShading(1, 0)
+    spriteSetAlpha(1, 0)
+}
+if(Headlight_R == 1)
+{
+    
+    spriteEnable(2, 1)
+    spriteSpawn(2,"sprites/light_glow01")
+    spriteSetParent(2, Entity)
+    spriteSetScale(2, 1.5)
+    
+    holoColor(2, LightColor1, 255)
+    holoDisableShading(2, 1)
+    spriteSetColor(2, LightColor1)
+    spriteSetPos(2, Entity:toWorld(vec(0,-288,105)))
+    spriteSetAlpha(2, 255)
+}
+else
+{
+    holoColor(2, LightColor1, 10)
+    holoDisableShading(2, 0)
+    spriteSetAlpha(2, 0)
+}
+
+if(Ditchlight_F == 1)
+{
+    
+    spriteEnable(3, 1)
+    spriteSpawn(3,"sprites/light_glow01")
+    spriteSetParent(3, Entity)
+    spriteSetScale(3, 1.5)
+    
+    holoColor(3, LightColor1, 255)
+    holoDisableShading(3, 1)
+    spriteSetColor(3, LightColor1)
+    spriteSetPos(3, Entity:toWorld(vec(24,316,24)))
+    spriteSetAlpha(3, 255)
+    
+    spriteEnable(4, 1)
+    spriteSpawn(4,"sprites/light_glow01")
+    spriteSetParent(4, Entity)
+    spriteSetScale(4, 1.5)
+    
+    holoColor(4, LightColor1, 255)
+    holoDisableShading(4, 1)
+    spriteSetColor(4, LightColor1)
+    spriteSetPos(4, Entity:toWorld(vec(-24,316,24)))
+    spriteSetAlpha(4, 255)
+}
+else
+{
+    holoColor(3, LightColor1, 100)
+    holoColor(4, LightColor1, 100)
+    holoDisableShading(3, 0)
+    holoDisableShading(4, 0)
+    spriteSetAlpha(3, 0)
+    spriteSetAlpha(4, 0)
+}
+
+if(Ditchlight_R == 1)
+{
+    
+    spriteEnable(5, 1)
+    spriteSpawn(5,"sprites/light_glow01")
+    spriteSetParent(5, Entity)
+    spriteSetScale(5, 1.5)
+    
+    holoColor(5, LightColor1, 255)
+    holoDisableShading(5, 1)
+    spriteSetColor(5, LightColor1)
+    spriteSetPos(5, Entity:toWorld(vec(24,-316,24)))
+    spriteSetAlpha(5, 255)
+    
+    spriteEnable(6, 1)
+    spriteSpawn(6,"sprites/light_glow01")
+    spriteSetParent(6, Entity)
+    spriteSetScale(6, 1.5)
+    
+    holoColor(6, LightColor1, 255)
+    holoDisableShading(6, 1)
+    spriteSetColor(6, LightColor1)
+    spriteSetPos(6, Entity:toWorld(vec(-24,-316,24)))
+    spriteSetAlpha(6, 255)
+}
+else
+{
+    holoColor(5, LightColor1, 100)
+    holoColor(6, LightColor1, 100)
+    holoDisableShading(5, 0)
+    holoDisableShading(6, 0)
+    spriteSetAlpha(5, 0)
+    spriteSetAlpha(6, 0)
+}
+
+if(Marker_F == 1)
+{
+    
+    spriteEnable(7, 1)
+    spriteSpawn(7,"sprites/light_glow01")
+    spriteSetParent(7, Entity)
+    spriteSetScale(7, 1)
+    
+    holoColor(7, LightColor2, 255)
+    holoDisableShading(7, 1)
+    spriteSetColor(7, LightColor2)
+    spriteSetPos(7, Entity:toWorld(vec(19.5,315.8,44)))
+    spriteSetAlpha(7, 255)
+    
+    spriteEnable(8, 1)
+    spriteSpawn(8,"sprites/light_glow01")
+    spriteSetParent(8, Entity)
+    spriteSetScale(8, 1)
+    
+    holoColor(8, LightColor2, 255)
+    holoDisableShading(8, 1)
+    spriteSetColor(8, LightColor2)
+    spriteSetPos(8, Entity:toWorld(vec(-19.5,315.8,44)))
+    spriteSetAlpha(8, 255)
+}
+else
+{
+    holoColor(7, LightColor2, 100)
+    holoColor(8, LightColor2, 100)
+    holoDisableShading(7, 0)
+    holoDisableShading(8, 0)
+    spriteSetAlpha(7, 0)
+    spriteSetAlpha(8, 0)
+}
+
+if(Marker_R == 1)
+{
+    
+    spriteEnable(9, 1)
+    spriteSpawn(9,"sprites/light_glow01")
+    spriteSetParent(9, Entity)
+    spriteSetScale(9, 1)
+    
+    holoColor(9, LightColor2, 255)
+    holoDisableShading(9, 1)
+    spriteSetColor(9, LightColor2)
+    spriteSetPos(9, Entity:toWorld(vec(19.5,-315.8,44)))
+    spriteSetAlpha(9, 255)
+    
+    spriteEnable(10, 1)
+    spriteSpawn(10,"sprites/light_glow01")
+    spriteSetParent(10, Entity)
+    spriteSetScale(10, 1)
+    
+    holoColor(10, LightColor2, 255)
+    holoDisableShading(10, 1)
+    spriteSetColor(10, LightColor2)
+    spriteSetPos(10, Entity:toWorld(vec(-19.5,-315.8,44)))
+    spriteSetAlpha(10, 255)
+}
+else
+{
+    holoColor(9, LightColor2, 100)
+    holoColor(10, LightColor2, 100)
+    holoDisableShading(9, 0)
+    holoDisableShading(10, 0)
+    spriteSetAlpha(9, 0)
+    spriteSetAlpha(10, 0)
+}

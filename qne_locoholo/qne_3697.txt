@@ -1,12 +1,11 @@
-@name SFQ 3600
+@name QNE 3697
 @inputs [Entity]:entity
 @persist A
 StripeColor1 = vec(0,0,0) #Black
 StripeColor2 = vec(252,119,3) #Orange
-StripeColor3 = vec(252,186,3) #Yellow
+StripeColor3 = vec(7,74,23) #Green
 CarModel = "models/gsgtrainprops/trains/propper/emd_gp50_hh.mdl"
 Entity:setAlpha(0)
-
 
     #Top
     A++
@@ -117,39 +116,3 @@ Entity:setAlpha(0)
     holoColor(A, StripeColor1)
     holoAng(A, Entity:toWorld(ang(0,-90,90)))
     holoPos(A, Entity:toWorld(vec(-320.5,0,108)))
-    
-    A++
-    holoCreate(A)
-    holoParent(A, Entity)
-    holoModel(A, "models/ext/parts/ditchlight_mount.mdl")
-    holoMaterial(A,"models/proppertextures/acrylic")
-    holoColor(A, StripeColor1)
-    holoAng(A, Entity:toWorld(ang(0,90,0)))
-    holoPos(A, Entity:toWorld(vec(-339.5,-26.2,21)))
-    
-    A++
-    holoCreate(A)
-    holoParent(A, Entity)
-    holoModel(A, "models/ext/parts/ditchlight_mount.mdl")
-    holoMaterial(A,"models/proppertextures/acrylic")
-    holoColor(A, StripeColor1)
-    holoAng(A, Entity:toWorld(ang(0,90,0)))
-    holoPos(A, Entity:toWorld(vec(-339.5,26.2,21)))
-    
-    A++
-    holoCreate(A)
-    holoParent(A, Entity)
-    holoModel(A, "models/ext/parts/ditchlight_mount.mdl")
-    holoMaterial(A,"models/proppertextures/acrylic")
-    holoColor(A, StripeColor1)
-    holoAng(A, Entity:toWorld(ang(0,-90,0)))
-    holoPos(A, Entity:toWorld(vec(339.5,-26.2,21)))
-    
-    A++
-    holoCreate(A)
-    holoParent(A, Entity)
-    holoModel(A, "models/ext/parts/ditchlight_mount.mdl")
-    holoMaterial(A,"models/proppertextures/acrylic")
-    holoColor(A, StripeColor1)
-    holoAng(A, Entity:toWorld(ang(0,-90,0)))
-    holoPos(A, Entity:toWorld(vec(339.5,26.2,21)))
