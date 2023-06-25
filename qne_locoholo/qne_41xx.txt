@@ -1,0 +1,100 @@
+@name QNE 41XX
+@inputs [Entity]:entity
+@persist A
+StripeColor1 = vec(0,0,0) #Black
+StripeColor2 = vec(252,119,3) #Orange
+StripeColor3 = vec(7,74,23) #Green
+CarModel = "models/gsgtrainprops/trains/propper/emd_gp30.mdl"
+Entity:setAlpha(0)
+
+    #Top
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor1)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,100), vec(0,0,1),0)
+    holoBodygroup(A,5,1)
+    holoBodygroup(A,7,1)
+
+    
+    #Stripe 1
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor2)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,100), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,98), vec(0,0,1),0)
+    
+
+    
+    #Middle
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor3)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,98), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,38), vec(0,0,1),0)
+    holoBodygroup(A,1,3)
+    holoBodygroup(A,2,2)
+    
+
+    holoEntity(A):setSubMaterial(3,"icegt/loco/ice_trainmetal_black")
+    holoEntity(A):setSubMaterial(4,"icegt/loco/ice_trainmetal_black")
+
+    #Stripe 2
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor2)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,38), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,36), vec(0,0,1),0)
+    holoBodygroup(A,2,2)
+    
+
+    holoEntity(A):setSubMaterial(3,"icegt/loco/ice_trainmetal_black")
+    holoEntity(A):setSubMaterial(4,"icegt/loco/ice_trainmetal_black")
+
+    #Bottom
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor1)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,36), vec(0,0,-1),0)
+    
+    holoBodygroup(A,11,1)
+    
+
+    holoEntity(A):setSubMaterial(3,"icegt/loco/ice_trainmetal_black")
+    holoEntity(A):setSubMaterial(4,"icegt/loco/ice_trainmetal_black")
+    
+    
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, "models/gsgtrainprops/parts/headlights/headlight_base_twinbeam_plate.mdl")
+    holoColor(A, StripeColor1)
+    holoAng(A, Entity:toWorld(ang(0,90,90)))
+    holoPos(A, Entity:toWorld(vec(302,0,108)))

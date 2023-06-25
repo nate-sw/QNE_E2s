@@ -1,0 +1,125 @@
+@name QNE MOW custom
+@inputs [Entity]:entity
+@persist A
+StripeColor1 = vec(0,0,0) #Black
+StripeColor2 = vec(255,255,255) #White
+StripeColor3 = vec(230,175,0) #Yellow
+CarModel = "models/fox/sd40-2_frame_shortaf.mdl"
+CabModel = "models/pilbara/cab_pilbcabearly.mdl"
+
+Entity:setAlpha(0)
+
+
+    #Frame
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+
+    
+    #Top
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CabModel)
+    holoColor(A, StripeColor1)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(-185,0,11.4)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,88), vec(0,0,1),0)
+    holoBodygroup(A,7,1)
+    holoBodygroup(A,8,1)
+    holoBodygroup(A,9,1)
+    holoBodygroup(A,10,1)
+    holoBodygroup(A,11,1)
+    holoEntity(A):setSubMaterial(4,"models/proppertextures/acrylic")
+
+    
+    #Stripe 1
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CabModel)
+    holoColor(A, StripeColor2)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(-185,0,11.4)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,88), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,86), vec(0,0,1),0)
+    holoBodygroup(A,7,1)
+    holoBodygroup(A,8,1)
+    holoBodygroup(A,9,1)
+    holoBodygroup(A,10,1)
+    holoBodygroup(A,11,1)
+    holoEntity(A):setSubMaterial(4,"models/proppertextures/acrylic")
+    
+    
+    
+    #Middle
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CabModel)
+    holoColor(A, StripeColor3)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(-185,0,11.4)))
+    holoClipEnabled(A,1,1)
+    #holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,86), vec(0,0,-1),0)
+    #holoClip(A,2,vec(0,0,36), vec(0,0,1),0)
+    holoBodygroup(A,7,1)
+    holoBodygroup(A,8,1)
+    holoBodygroup(A,9,1)
+    holoBodygroup(A,10,1)
+    holoBodygroup(A,11,1)
+    holoEntity(A):setSubMaterial(4,"models/proppertextures/acrylic")
+
+    
+    "
+
+    #Stripe 2
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CabModel)
+    holoColor(A, StripeColor2)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,11.4)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,36), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,34), vec(0,0,1),0)
+    holoBodygroup(A,7,1)
+    holoBodygroup(A,8,1)
+    holoBodygroup(A,9,1)
+    holoBodygroup(A,10,1)
+    holoBodygroup(A,11,1)
+    holoEntity(A):setSubMaterial(4,"#models/proppertextures/acrylic")
+
+    
+
+"
+
+    #Bottom
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CabModel)
+    holoColor(A, StripeColor1)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,11.4)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,34), vec(0,0,-1),0)
+    holoBodygroup(A,7,1)
+    holoBodygroup(A,8,1)
+    holoBodygroup(A,9,1)
+    holoBodygroup(A,10,1)
+    holoBodygroup(A,11,1)
+    holoEntity(A):setSubMaterial(4,"#models/proppertextures/acrylic")
+
+    
+
+

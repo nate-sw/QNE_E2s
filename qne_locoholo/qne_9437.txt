@@ -1,0 +1,86 @@
+@name QNE 9437
+@inputs [Entity]:entity
+@persist A
+StripeColor1 = vec(0,0,0) #Black
+StripeColor2 = vec(255,255,255) #White
+StripeColor3 = vec(66,135,245) #Blue
+CarModel = "models/floofy/locomotives/9-44cw/9-44cw.mdl"
+Entity:setAlpha(0)
+
+    #Top
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor1)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,108), vec(0,0,1),0)
+    holoBodygroup(A,8,1)
+    holoBodygroup(A,10,1)
+
+    
+    #Stripe 1
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor2)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,108), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,106), vec(0,0,1),0)
+    holoBodygroup(A,10,1)
+
+    
+    #Middle
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor3)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,106), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,19.5), vec(0,0,1),0)
+    holoEntity(A):setSubMaterial(1,"icegt/loco/ice_trainmetal_black")
+    holoEntity(A):setSubMaterial(11,"icegt/loco/ice_trainmetal_black")
+    holoBodygroup(A,1,1)
+    holoBodygroup(A,2,1)
+    holoBodygroup(A,8,1)
+    holoBodygroup(A,10,1)
+    
+
+
+    #Stripe 2
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor2)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,19.5), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,17.5), vec(0,0,1),0)
+    holoEntity(A):setSubMaterial(11,"icegt/loco/ice_trainmetal_black")
+
+
+    #Bottom
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor1)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,17.5), vec(0,0,-1),0)
+    holoEntity(A):setSubMaterial(11,"icegt/loco/ice_trainmetal_black")
+

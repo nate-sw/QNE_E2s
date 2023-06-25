@@ -166,6 +166,10 @@ if(first()|duped()){
         holoModel(A, "models/magtrains/numplate_emd_4d.mdl")
         holoAng(A, Entity:toWorld(ang(90,63.5,0)))
         holoPos(A, Entity:toWorld(vec(21,183.5,115)))
+        holoBodygroup(A,1,1)
+        holoBodygroup(A,2,4)
+        holoBodygroup(A,3,0)
+        holoBodygroup(A,4,6)
     
     A++
         holoCreate(A)
@@ -173,20 +177,32 @@ if(first()|duped()){
         holoModel(A, "models/magtrains/numplate_emd_4d.mdl")
         holoAng(A, Entity:toWorld(ang(90,116.5,0)))
         holoPos(A, Entity:toWorld(vec(-21,183.5,115)))
+        holoBodygroup(A,1,1)
+        holoBodygroup(A,2,4)
+        holoBodygroup(A,3,0)
+        holoBodygroup(A,4,6)
         
     A++
         holoCreate(A)
         holoParent(A, Entity)
         holoModel(A, "models/magtrains/numplate_emd_4d.mdl")
-        holoAng(A, Entity:toWorld(ang(-90,58,0)))
+        holoAng(A, Entity:toWorld(ang(90,-122,0)))
         holoPos(A, Entity:toWorld(vec(-20,-276.3,100)))
+        holoBodygroup(A,1,1)
+        holoBodygroup(A,2,4)
+        holoBodygroup(A,3,0)
+        holoBodygroup(A,4,6)
     
     A++
         holoCreate(A)
         holoParent(A, Entity)
         holoModel(A, "models/magtrains/numplate_emd_4d.mdl")
-        holoAng(A, Entity:toWorld(ang(-90,122,0)))
+        holoAng(A, Entity:toWorld(ang(90,-58,0)))
         holoPos(A, Entity:toWorld(vec(20,-276.3,100)))
+        holoBodygroup(A,1,1)
+        holoBodygroup(A,2,4)
+        holoBodygroup(A,3,0)
+        holoBodygroup(A,4,6)
         
         
         

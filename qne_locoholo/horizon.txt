@@ -1,0 +1,85 @@
+@name QNE horizon
+@inputs [Entity]:entity
+@persist A
+StripeColor1 = vec(0,0,0) #Black
+StripeColor2 = vec(252,119,3) #Orange
+StripeColor3 = vec(7,74,23) #Green
+CarModel = "models/anytrains/rollingstock/cabcars/fictional/horizon_emu.mdl"
+Entity:setAlpha(0)
+
+    #Top
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor1)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,100), vec(0,0,1),0)
+
+
+    
+    #Stripe 1
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor2)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,100), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,98), vec(0,0,1),0)
+    
+
+    
+    #Middle
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor3)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,98), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,38), vec(0,0,1),0)
+
+    
+
+
+    #Stripe 2
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor2)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,38), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,36), vec(0,0,1),0)
+
+    
+
+
+    #Bottom
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor1)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,36), vec(0,0,-1),0)
+
+    
+
+    
+    
+

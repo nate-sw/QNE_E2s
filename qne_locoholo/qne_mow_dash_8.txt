@@ -1,0 +1,101 @@
+@name QNE MOW DASH_8
+@inputs [Entity]:entity
+@persist A
+StripeColor1 = vec(0,0,0) #Black
+StripeColor2 = vec(255,255,255) #White
+StripeColor3 = vec(230,175,0) #Yellow
+CarModel = "models/lazpack/generalelectrik/ge_c40-8.mdl"
+Entity:setAlpha(0)
+
+    #Top
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor1)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,110), vec(0,0,1),0)
+    holoBodygroup(A,3,1)
+    #holoBodygroup(A,7,1)
+
+    
+    #Stripe 1
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor2)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,110), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,108), vec(0,0,1),0)
+    holoBodygroup(A,3,1)
+    
+
+    
+    #Middle
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor3)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,108), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,28), vec(0,0,1),0)
+    holoBodygroup(A,2,1)
+    holoBodygroup(A,3,1)
+    holoBodygroup(A,4,1)
+    holoBodygroup(A,5,1)
+
+    
+
+    #holoEntity(A):setSubMaterial(3,"icegt/loco/ice_trainmetal_black")
+    #holoEntity(A):setSubMaterial(4,"icegt/loco/ice_trainmetal_black")
+
+    #Stripe 2
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor2)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,28), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,26), vec(0,0,1),0)
+    holoBodygroup(A,4,1)
+    holoBodygroup(A,5,1)
+
+    
+
+
+
+    #Bottom
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, StripeColor1)
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,26), vec(0,0,-1),0)
+    holoBodygroup(A,4,1)
+    holoBodygroup(A,5,1)
+
+
+
+
+
+    holoEntity(A):setSubMaterial(4,"models/proppertextures/acrylic")
+    
+
+

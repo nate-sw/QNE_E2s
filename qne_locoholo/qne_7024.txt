@@ -1,7 +1,7 @@
-@name QNE 7070
+@name QNE 7024
 @inputs [Entity]:entity
 @persist A
-StripeColor1 = vec(0,0,0) #Black
+StripeColor1 = vec(0,61,165) #darker blue
 StripeColor2 = vec(255,255,255) #White
 StripeColor3 = vec(66,135,245) #Blue
 CarModel = "models/wam98_trains/locomotives/emd_sd70ace_phase2a-2e3.mdl"

@@ -1,0 +1,62 @@
+@name QNE Baggage
+@inputs [Entity]:entity
+@persist A
+
+CarModel = "models/flak/coach1_baggagev2.mdl"
+Entity:setAlpha(0)
+
+
+    #Top
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, vec(0,0,0))
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,45), vec(0,0,1),0)
+    holoEntity(A):setSubMaterial(6,"models/proppertextures/acrylic")
+    
+    #Stripe 1
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, vec(100,100,100))
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,45), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,40), vec(0,0,1),0)
+    holoEntity(A):setSubMaterial(6,"models/proppertextures/acrylic")
+    
+
+    #Bottom
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, vec(66,135,245))
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,40), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,-37.5), vec(0,0,1),0)
+    holoEntity(A):setSubMaterial(6,"models/proppertextures/acrylic")
+    
+    
+    
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, vec(0,0,0))
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,-37.5), vec(0,0,-1),0)
+    holoEntity(A):setSubMaterial(6,"models/proppertextures/acrylic")
+

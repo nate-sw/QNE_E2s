@@ -1,0 +1,103 @@
+@name QNE horizon commuter
+@inputs [Entity]:entity
+@persist A
+
+CarModel = "models/anytrains/rollingstock/cabcars/fictional/horizon_emu.mdl"
+Entity:setAlpha(0)
+
+
+    #Top
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, vec(0,61,165))
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,85), vec(0,0,1),0)
+    holoBodygroup(A,3,2)
+    holoBodygroup(A,4,2)
+    
+    #Stripe 1
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, vec(255,255,255))
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,85), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,80), vec(0,0,1),0)
+    holoBodygroup(A,3,2)
+    holoBodygroup(A,4,2)
+
+    
+    #Mid
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, vec(66,135,245))
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,80), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,50), vec(0,0,1),0)
+    holoBodygroup(A,3,2)
+    holoBodygroup(A,4,2)
+
+    
+    #Stripe 2
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, vec(255,255,255))
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,50), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,45), vec(0,0,1),0)
+    holoBodygroup(A,3,2)
+    holoBodygroup(A,4,2)
+
+
+    #Bottom
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, vec(0,61,165))
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClipEnabled(A,2,1)
+    holoClip(A,1,vec(0,0,45), vec(0,0,-1),0)
+    holoClip(A,2,vec(0,0,-37.5), vec(0,0,1),0)
+    holoBodygroup(A,3,2)
+    holoBodygroup(A,4,2)
+
+    
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, CarModel)
+    holoColor(A, vec(0,0,0))
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
+    holoClipEnabled(A,1,1)
+    holoClip(A,1,vec(0,0,-37.5), vec(0,0,-1),0)
+    holoBodygroup(A,3,2)
+    holoBodygroup(A,4,2)
+    
+    A++
+    holoCreate(A)
+    holoParent(A, Entity)
+    holoModel(A, "models/anytrains/rollingstock/cabcars/fictional/horizon_emu_seats.mdl")
+    holoAng(A, Entity:toWorld(ang(0,0,0)))
+    holoPos(A, Entity:toWorld(vec(0,0,0)))
